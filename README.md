@@ -45,5 +45,6 @@ Right-click on the html and select open with 'live server'
 ```
 
 # Credits
-Special thanks to the The Coding Train for the project idea, link to his video below.                                                              
+Special thanks to the The Coding Train for the project idea, link to his video below.    
+[![here](https://www.youtube.com/watch?v=FWSR_7kZuYg&t=1802s)]
 ==> https://www.youtube.com/watch?v=FWSR_7kZuYg&t=1802s <==
