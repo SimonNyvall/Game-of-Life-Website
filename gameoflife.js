@@ -7,22 +7,23 @@ var colums = 60;
 let isAlive = make2DArray(colums, rows);
 let isAlineNextGen = make2DArray(colums, rows);
 
-for (let i = 0; i < colums; i++){
-    for (let j = 0; j < rows; j++){
+for (let i = 0; i < colums; i++) {
+    for (let j = 0; j < rows; j++) {
         isAlive[i][j] = false;
     }
 }
 
-window.onload = function(){
+window.onload = function () {
     startGame();
 }
 
-function startGame(){
+// Creates the buttons div
+function startGame() {
     document.getElementById("start-button").addEventListener("click", playOutTheGen);
 
-    for (let r = 0; r < rows; r++){
+    for (let r = 0; r < rows; r++) {
         let row = [];
-        for (let c = 0; c < colums; c++){
+        for (let c = 0; c < colums; c++) {
             let tile = document.createElement("div");
             tile.id = r.toString() + "-" + c.toString();
             tile.addEventListener("click", clickTile);
@@ -34,26 +35,26 @@ function startGame(){
     console.log(board);
 }
 
-function make2DArray(cols, rows){
+function make2DArray(cols, rows) {
     let arr = new Array(cols);
-    for (let i = 0; i < arr.length; i++){
+    for (let i = 0; i < arr.length; i++) {
         arr[i] = new Array(rows);
     }
     return arr;
 }
 
-
-function clickTile(){
+// Tile click, will make a tile green and give a cell life, but also kill it if it lives
+function clickTile() {
     let tile = this;
 
     let coords = tile.id.split("-");
     let r = parseInt(coords[0]);
     let c = parseInt(coords[1]);
 
-    if (isAlive[c][r] == false){
+    if (isAlive[c][r] == false) {
         tile.style.backgroundColor = "green";
         isAlive[c][r] = true;
-    } else{
+    } else {
         tile.style.backgroundColor = "lightgray";
         isAlive[c][r] = false;
     }
@@ -64,70 +65,63 @@ function clickTile(){
     // Update the bool list with the coords of r and c
 }
 
-function playOutTheGen(){
-while (true){
-    for (let i = 0; i < colums; i++){
-        for (let j = 0; j < rows; j++){
+// Playes the game of life
+function playOutTheGen() {
+
+    console.log(isAlive);
+    for (let i = 0; i < colums; i++) {
+        for (let j = 0; j < rows; j++) {
 
             // Edges
-            if (i == 0 || i == colums - 1 || j == 0 || j == rows - 1){
+            if (i == 0 || i == colums - 1 || j == 0 || j == rows - 1) {
                 isAlineNextGen[i][j] = isAlive[i][j];
-            }else{
+            } else {
 
-            // Count live neighbors
-            let neighbors = countNeighbors(i ,j);
-            
-            let state = isAlive[i][j];
+                // Count live neighbors
+                let neighbors = countNeighbors(i, j);
 
-            // Game of life rules
-            if (state == false && neighbors == 3){
-                isAlineNextGen[i][j] = true;
-            } else if (state == true && (neighbors < 2 || neighbors > 3)){
-                isAlineNextGen[i][j] = false;
-            } else{
-                isAlineNextGen[i][j] = isAlive[i][j];
+                let state = isAlive[i][j];
+
+                // Game of life rules
+                if (state == false && neighbors == 3) {
+                    isAlineNextGen[i][j] = true;
+                } else if (state == true && (neighbors < 2 || neighbors > 3)) {
+                    isAlineNextGen[i][j] = false;
+                } else {
+                    isAlineNextGen[i][j] = isAlive[i][j];
+                }
             }
-        }
         }
     }
 
     // Update the board
-    for (let i = 0; i < colums; i++){
-        for (let j = 0; j < rows; j++){
-            let tile = board[i][j];
-            if (isAlineNextGen[i][j] == true){
+    for (let i = 0; i < colums; i++) {
+        for (let j = 0; j < rows; j++) {
+            let tile = board[j][i];
+            if (isAlineNextGen[i][j] == true) {
                 tile.style.backgroundColor = "green";
             }
-            else{
+            else {
                 tile.style.backgroundColor = "lightgray";
             }
         }
     }
 
     isAlive = isAlineNextGen;
-
-    // Reset of isAlineNextGen
-    for (let i = 0; i < colums; i++){
-        for (let j = 0; j < rows; j++){
-            isAlineNextGen[i][j] = false;
-        }
-    }
-
-    // sleep function
-}
 }
 
-function countNeighbors(x, y){
+// Counts the nieghbors around a cell
+function countNeighbors(x, y) {
     let sum = 0;
-    for (let i = -1; i < 2; i++){
-        for (let j = -1; j < 2; j++){
-            if (isAlive[x + i][y + j] == true){
+    for (let i = -1; i < 2; i++) {
+        for (let j = -1; j < 2; j++) {
+            if (isAlive[x + i][y + j] == true) {
                 sum++;
             }
         }
     }
 
-    if (isAlive[x][y] == true){
+    if (isAlive[x][y] == true) {
         sum--;
     }
 
