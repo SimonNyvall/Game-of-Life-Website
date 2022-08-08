@@ -1,4 +1,4 @@
-# Game-of-Life-Website [![Deno](https://github.com/SimonNyvall/Game-of-Life-Website/actions/workflows/deno.yml/badge.svg)](https://github.com/SimonNyvall/Game-of-Life-Website/actions/workflows/deno.yml)
+# Game-of-Life-Website [![Jekyll site CI](https://github.com/SimonNyvall/Game-of-Life-Website/actions/workflows/jekyll.yml/badge.svg)](https://github.com/SimonNyvall/Game-of-Life-Website/actions/workflows/jekyll.yml)
 
 ![giphy](https://user-images.githubusercontent.com/50596493/183426858-02dd13b0-b4a6-4370-97e4-6153c121a593.gif)
 
