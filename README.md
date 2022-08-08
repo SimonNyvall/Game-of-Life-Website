@@ -30,9 +30,7 @@ else{
 NOTE: All of the check should be done before changing any state to alive or dead. Therefore have two arrays with the current generation and the next one.
 
 # Install and Run the Project
-Below my profile put a link to my github pages, there you can test the project via the web. Or you can click here ==> www.fjierf <==
 
-## Install
 Step one:
 ```
 git clone https://github.com/SimonNyvall/Game-of-Life-Website.git
