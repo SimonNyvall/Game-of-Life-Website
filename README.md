@@ -2,10 +2,8 @@
 
 ![giphy](https://user-images.githubusercontent.com/50596493/183426858-02dd13b0-b4a6-4370-97e4-6153c121a593.gif)
 
-
 ## Project Description
-A project made with javascript, html and css to create the game 'game of life'. Have been useing linux the few past months and have never had a easy way to do graphics. So I thought I would tackle a web project to illustrate some graphics.
-
+A project made with javascript, html and CSS to create the game 'game of life'. Have been using Linux the few past months and have never had an easy way to do graphics. So I thought I would tackle a web project to illustrate some graphics.
 ### Rules
 The Game of Life rules are:
 ```
@@ -13,7 +11,7 @@ The Game of Life rules are:
 2.Any dead cell with three live neighbours becomes a live cell.
 3.All other live cells die in the next generation. Similarly, all other dead cells stay dead.
 ```
-I wrote the condisions in three if-statments. Where I have a array of boolien to check if the cell is alive or dead, and calculate the cells neighbors around it. One cell can only have eight neighbors, so you check cells around the current one.
+I wrote the conditions in three if-statements. Where I have an array of billing to check if the cell is alive or dead, and calculate the cells neighbors around it. One cell can only have eight neighbors, so you check cells around the current one.
 ```
 if [ CELL == DEAD && CELLS NEIGHBORS == 3 ]{
     NextGenerationOfCell = Alive;
@@ -29,7 +27,7 @@ else{
     NextGenerationOfCell = Alive;
 }
 ```
-NOTE: All of the check shoud be done before changing any state to alive or dead. Therefore have two arrays with the current generation and the next one.
+NOTE: All of the check should be done before changing any state to alive or dead. Therefore have two arrays with the current generation and the next one.
 
 # Install and Run the Project
 Below my profile put a link to my github pages, there you can test the project via the web. Or you can click here ==> www.fjierf <==
@@ -37,7 +35,7 @@ Below my profile put a link to my github pages, there you can test the project v
 ## Install
 Step one:
 ```
-git clone 
+git clone https://github.com/SimonNyvall/Game-of-Life-Website.git
 ```
 Step two:
 ```
@@ -49,5 +47,5 @@ Right-click on the html and select open with 'live server'
 ```
 
 # Credits
-Speciall thanks to the The Coding Train for the project idea, lnik to his video below.
-[![The-Coding-Train](https://img.youtube.com/vi/FWSR_7kZuYg&t=1647s/0.jpg)](https://www.youtube.com/watch?v=FWSR_7kZuYg&t=1647s)
+Special thanks to the The Coding Train for the project idea, link to his video below.                                                              
+==> https://www.youtube.com/watch?v=FWSR_7kZuYg&t=1802s <==
